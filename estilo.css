@@ -1,0 +1,187 @@
+
+         /* Variáveis de Cores */
+        :root {
+            --primary: #d9480f; /* Laranja Queimado/Terracota */
+            --secondary: #fab005; /* Amarelo Mostarda */
+            --bg-light: #fffaf0; /* Creme suave */
+            --text-dark: #2d2d2d;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+        nav a { text-decoration: none; color: var(--text-dark); margin-left: 20px; font-weight: 500; transition: 0.3s; }
+        nav a:hover { color: var(--primary); }
+
+        /* Banner Principal */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1541592106381-b31e922f3b55?q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            padding: 0 20px;
+        }
+        .hero h1 { font-size: 3rem; margin-bottom: 15px; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin-bottom: 25px; }
+        .cta-button {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .cta-button:hover { background-color: #bc3e0e; transform: translateY(-3px); }
+
+        /* Filtros e Categorias */
+        .section { padding: 40px 5%; }
+        .section-title { text-align: center; margin-bottom: 30px; font-size: 2rem; }
+        .section-title span { color: var(--primary); }
+
+        /* Grid de Salgados */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.4s;
+            position: relative;
+        }
+        .card:hover { transform: scale(1.03); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        
+        .card-img { width: 100%; height: 220px; object-fit: cover; }
+        .tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--secondary);
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .card-content { padding: 20px; }
+        .card-content h3 { margin-bottom: 10px; color: var(--primary); }
+        .card-content p { font-size: 0.9rem; color: #666; margin-bottom: 15px; }
+        .price { font-size: 1.25rem; font-weight: 700; color: var(--text-dark); }
+
+        /* Rodapé */
+        footer { background: var(--text-dark); color: white; padding: 50px 5%; text-align: center; }
+        .social-links { margin-top: 20px; }
+        .social-links a { color: var(--secondary); margin: 0 10px; text-decoration: none; }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            header { flex-direction: column; gap: 15px; }
+            nav a { margin: 0 10px; }
+        }
+/* Reset básico */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: #0b0b0b;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+#loading-screen {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('irr.webp') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end; /* Conteúdo na parte de baixo como em jogos */
+    z-index: 1000;
+    transition: transform 0.8s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.background-overlay {
+    position: absolute;
+    width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, transparent 100%);
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    padding: 50px;
+    z-index: 2;
+}
+
+.game-title {
+    font-size: 3rem;
+    letter-spacing: 10px;
+    color: #00f2ff;
+    text-shadow: 0 0 15px #00f2ff;
+    margin-bottom: 20px;
+}
+
+.loading-container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.loading-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #eee;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid #333;
+    padding: 2px;
+}
+
+#progress-fill {
+    width: 0%; /* Começa em 0 */
+    height: 100%;
+    background: linear-gradient(90deg, #00828a, #00f2ff);
+    box-shadow: 0 0 10px #00f2ff;
+    transition: width 0.2s ease-out;
+}
+
+.hint {
+    margin-top: 20px;
+    font-style: italic;
+    color: #888;
+}
+
+/* Esconder tela de loading */
+.hide-loader {
+    transform: translateY(-100%);
+}
