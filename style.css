@@ -168,7 +168,7 @@ body {
     height: 100%;
     background: linear-gradient(90deg, #00828a, #00f2ff);
     box-shadow: 0 0 10px #00f2ff;
-    transition: width 0.2s ease-out;
+    transition: width 0.4s ease-out;
 }
 
 .hint {
